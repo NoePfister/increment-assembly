@@ -1,0 +1,50 @@
+{
+    "screw":[
+        ["iron", 10],
+        ["wood", 5]
+    ],
+    "handle":[
+        ["wood", 5],
+        ["leather", 1]
+    ],
+    "strap":[
+        ["leather",20]
+    ],
+    "hammer":[
+        ["screw", 2],
+        ["handle", 1]
+    ],
+    "axe":[
+        ["screw", 2],
+        ["handle", 1],
+        ["strap", 1]
+    ],
+    "knive":[
+        ["handle",1],
+        ["strap,3"]
+    ],
+    "toolbox":[
+        ["hammer", 1],
+        ["axe", 1],
+        ["knive", 1]
+    ],
+    "workbench":[
+        ["toolbox",100],
+        ["screw", 50]
+    ],
+    "anvil":[
+        ["iron",100],
+        ["hammer", 5],
+        ["workbench", 5]
+    ],
+    "sawbench":[
+        ["screw", 30],
+        ["axe", 10],
+        ["workbench", 5]
+    ],
+    "skinning-table":[
+        ["screw",50],
+        ["knive", 20],
+        ["workbench", 5]
+    ]
+}
