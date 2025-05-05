@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +12,9 @@
         rel="stylesheet">
 
 </head>
+
 <body>
-    
+
     <div class="container">
 
 
@@ -23,14 +25,37 @@
 
         <div class="menu">
             <h2>Gather Resources</h2>
-            <button class="resource-button">Iron</button><span>(+0/s)</span><span class="resource-available"><b>1K</b></span><br/>
-            <button class="resource-button">Wood</button><span>(+0/s)</span><span class="resource-available"><b>1K</b></span><br/>
-            <button class="resource-button">Leather</button><span>(+0/s)</span><span class="resource-available"><b>1K</b></span><br/>
+            <button class="resource-button">Iron</button><span>(+0/s)</span><span class="resource-available">Available:
+                <b>1K</b></span><br />
+            <button class="resource-button">Wood</button><span>(+0/s)</span><span
+                class="resource-available"><b>1K</b></span><br />
+            <button class="resource-button">Leather</button><span>(+0/s)</span><span
+                class="resource-available"><b>1K</b></span><br />
         </div>
 
 
         <div class="content">
             <h2>Assembly</h2>
+
+
+            <button class="assembly-button">Nail</button>
+            <span>(+0/s)</span>
+            <span class="assembly-available">Available: <b>1K</b></span>
+            <span class="assembly-requirement">(<i>Requires: 1 Iron</i>)</span><br />
+
+
+            <button class="assembly-button">Hammer</button>
+            <span>(+0/s)</span>
+            <span class="assembly-available">Available: <b>1K</b></span>
+            <span class="assembly-requirement">(<i>Requires: 10 Iron; 5 Wood</i>)</span><br />
+
+
+            <button class="assembly-button">Anvil</button>
+            <span>(+0/s)</span>
+            <span class="assembly-available">Available: <b>1K</b></span>
+            <span class="assembly-requirement">(<i>Requires: 100 Iron</i>)</span><br />
+
+
         </div>
 
 
@@ -46,4 +71,5 @@
 
     </div>
 </body>
+
 </html>
