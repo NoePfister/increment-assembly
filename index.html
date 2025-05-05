@@ -53,21 +53,21 @@
             <!-- More Resources per Click -->
 
             <!-- SCREW BUTTON (More Iron per click)-->
-            <button class="assembly-button">Screw</button>
+            <button id="button-screw" class="assembly-button">Screw</button>
             <span>(+0/s)</span>
-            <span class="assembly-available">Available: <b>1K</b></span>
+            <span class="assembly-available">Available: <b id="resource-screw">1K</b></span>
             <span class="assembly-requirement">(<i>Requires: 10 Iron; 5 Wood</i>)</span><br />
 
             <!-- HANDLE BUTTON (More Wood per click) -->
-            <button class="assembly-button">Handle</button>
+            <button id="button-handle" class="assembly-button">Handle</button>
             <span>(+0/s)</span>
-            <span class="assembly-available">Available: <b>1K</b></span>
+            <span class="assembly-available">Available: <b id="resource-handle">1K</b></span>
             <span class="assembly-requirement">(<i>Requires: 5 Wood; 1 Leather</i>)</span><br />
 
             <!-- STRAP BUTTON (More Leather per click) -->
-            <button class="assembly-button">Strap</button>
+            <button id="button-strap" class="assembly-button">Strap</button>
             <span>(+0/s)</span>
-            <span class="assembly-available">Available: <b>1K</b></span>
+            <span class="assembly-available">Available: <b id="resource-strap">1K</b></span>
             <span class="assembly-requirement">(<i>Requires: 20 Leather</i>)</span><br />
 
             <hr />
@@ -77,27 +77,27 @@
             <!-- Basic Resources Automation -->
 
             <!-- HAMMER BUTTON (+1 Iron/Second)-->
-            <button class="assembly-button">Hammer</button>
+            <button id="button-hammer" class="assembly-button">Hammer</button>
             <span>(+0/s)</span>
-            <span class="assembly-available">Available: <b>1K</b></span>
+            <span class="assembly-available">Available: <b id="resource-hammer">1K</b></span>
             <span class="assembly-requirement">(<i>Requires: 2 Screw; 1 Handle</i>)</span><br />
 
             <!-- AXE BUTTON (+1 Wood/Second) -->
-            <button class="assembly-button">Axe</button>
+            <button id="button-axe" class="assembly-button">Axe</button>
             <span>(+0/s)</span>
-            <span class="assembly-available">Available: <b>1K</b></span>
+            <span class="assembly-available">Available: <b id="resource-axe">1K</b></span>
             <span class="assembly-requirement">(<i>Requires: 2 Screw; 1 Handle; 1 Strap</i>)</span><br />
 
             <!-- KNIVE BUTTON (+1 Leather/Second) -->
-            <button class="assembly-button">Knive</button>
+            <button id="button-knive" class="assembly-button">Knive</button>
             <span>(+0/s)</span>
-            <span class="assembly-available">Available: <b>1K</b></span>
+            <span class="assembly-available">Available: <b id="resource-knive">1K</b></span>
             <span class="assembly-requirement">(<i>Requires: 1 Handle; 3 Strap</i>)</span><br />
 
             <!-- TOOLBOX BUTTON (More everything per click) -->
-            <button class="assembly-button">Toolbox</button>
+            <button id="button-toolbox" class="assembly-button">Toolbox</button>
             <span>(+0/s)</span>
-            <span class="assembly-available">Available: <b>1K</b></span>
+            <span class="assembly-available">Available: <b id="resource-toolbox">1K</b></span>
             <span class="assembly-requirement">(<i>Requires: 1 Hammer; 1 Axe; 1 Knive</i>)</span><br />
 
 
@@ -108,27 +108,27 @@
             <!-- Crafting, but only a 10% Efficiency; Unlocks Masteries -->
 
             <!-- WORKBENCH BUTTON (Enables Auto Crafting; Faster crafting)-->
-            <button class="assembly-button">Workbench</button>
+            <button id="button-workbench" class="assembly-button">Workbench</button>
             <span>(+0/s)</span>
-            <span class="assembly-available">Available: <b>1K</b></span>
+            <span class="assembly-available">Available: <b id="resource-workbench">1K</b></span>
             <span class="assembly-requirement">(<i>Requires: 100 Toolbox; 50 Screw</i>)</span><br />
 
             <!-- ANVIL BUTTON (+1 Screw/Second) -->
-            <button class="assembly-button">Anvil</button>
+            <button id="button-anvil" class="assembly-button">Anvil</button>
             <span>(+0/s)</span>
-            <span class="assembly-available">Available: <b>1K</b></span>
+            <span class="assembly-available">Available: <b id="resource-anvil">1K</b></span>
             <span class="assembly-requirement">(<i>Requires: 100 Iron; 5 Hammer; 5 Workbench</i>)</span><br />
 
             <!-- SAWBENCH BUTTON (+1 Handle/Second) -->
-            <button class="assembly-button">Sawbench</button>
+            <button id="button-sawbench" class="assembly-button">Sawbench</button>
             <span>(+0/s)</span>
-            <span class="assembly-available">Available: <b>1K</b></span>
+            <span class="assembly-available">Available: <b id="resource-sawbench">1K</b></span>
             <span class="assembly-requirement">(<i>Requires: 30 Screw; 10 Axe; 5 Workbench</i>)</span><br />
 
             <!-- SKINNING TABLE BUTTON (+1 Strap/Second) -->
-            <button class="assembly-button">Skinning Table</button>
+            <button id="button-skinning_table" class="assembly-button">Skinning Table</button>
             <span>(+0/s)</span>
-            <span class="assembly-available">Available: <b>1K</b></span>
+            <span class="assembly-available">Available: <b id="resource-skinning_table">1K</b></span>
             <span class="assembly-requirement">(<i>Requires: 50 Screw; 20 Knive; 5 Workbench</i>)</span><br />
 
 
@@ -154,7 +154,7 @@
     <a href="mailto:noe.pfister@gmx.ch">Contact Me</a>
 
     <!-- IT IS IMPORTANT, THAT THIS SCRIPT IS AT THE END!!!!!!! -->
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
 
 </body>
 
