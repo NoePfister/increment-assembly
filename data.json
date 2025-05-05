@@ -92,7 +92,7 @@
                 1
             ]
         ],
-        "tooltip": "+1 Resource per Click"
+        "tooltip": "*1.5 Resource per Click"
     },
     "workbench": {
         "ingredients": [

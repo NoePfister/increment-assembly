@@ -82,7 +82,7 @@ var counts = {
 update_text();
 // ----
 buttons["iron_button"].onclick = function () {
-    counts["iron_count"] += (counts["screw_count"]+1);
+    counts["iron_count"] += (counts["screw_count"] + 1);
     update_text();
 };
 
@@ -125,7 +125,7 @@ for (let item in data) {
         };
 
 
-        button.setAttribute("data_title",data[item]["tooltip"])
+        button.setAttribute("data_title", data[item]["tooltip"])
     }
 }
 
@@ -135,9 +135,9 @@ for (let item in data) {
 
 
 function update_text() {
-    resources["iron_resource"].innerHTML = counts["iron_count"];
-    resources["wood_resource"].innerHTML = counts["wood_count"];
-    resources["leather_resource"].innerHTML = counts["leather_count"];
+    resources["iron_resource"].innerHTML = (counts["iron_count"] * Math.max((1.5 * counts["toolbox_count"]),1));
+    resources["wood_resource"].innerHTML = (counts["wood_count"] * Math.max((1.5 * counts["toolbox_count"]), 1));
+    resources["leather_resource"].innerHTML = (counts["leather_count"] * Math.max((1.5 * counts["toolbox_count"]), 1));
 
     for (let item in data) {
         let text = resources[item + "_resource"];
@@ -146,5 +146,12 @@ function update_text() {
 }
 
 function update_numbers() {
-    
+    counts["iron_count"] += counts["hammer_count"];
+    counts["wood_count"] += counts["axe_count"];
+    counts["leather_count"] += counts["knive_count"];
 }
+
+var intervalId = window.setInterval(function () {
+    update_numbers();
+    update_text();
+}, 1000);
