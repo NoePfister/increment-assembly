@@ -1,50 +1,161 @@
 {
-    "screw":[
-        ["iron", 10],
-        ["wood", 5]
-    ],
-    "handle":[
-        ["wood", 5],
-        ["leather", 1]
-    ],
-    "strap":[
-        ["leather",20]
-    ],
-    "hammer":[
-        ["screw", 2],
-        ["handle", 1]
-    ],
-    "axe":[
-        ["screw", 2],
-        ["handle", 1],
-        ["strap", 1]
-    ],
-    "knive":[
-        ["handle",1],
-        ["strap,3"]
-    ],
-    "toolbox":[
-        ["hammer", 1],
-        ["axe", 1],
-        ["knive", 1]
-    ],
-    "workbench":[
-        ["toolbox",100],
-        ["screw", 50]
-    ],
-    "anvil":[
-        ["iron",100],
-        ["hammer", 5],
-        ["workbench", 5]
-    ],
-    "sawbench":[
-        ["screw", 30],
-        ["axe", 10],
-        ["workbench", 5]
-    ],
-    "skinning-table":[
-        ["screw",50],
-        ["knive", 20],
-        ["workbench", 5]
-    ]
+    "screw": {
+        "ingredients": [
+            [
+                "iron",
+                10
+            ],
+            [
+                "wood",
+                5
+            ]
+        ],
+        "tooltip": "Gives you +1 Iron per click"
+    },
+    "handle": {
+        "ingredients": [
+            [
+                "wood",
+                5
+            ],
+            [
+                "leather",
+                1
+            ]
+        ],
+        "tooltip": "Gives you +1 Wood per click"
+    },
+    "strap": {
+        "ingredients": [
+            [
+                "leather",
+                20
+            ]
+        ],
+        "tooltip": "Gives you +1 Leather per click"
+    },
+    "hammer": {
+        "ingredients": [
+            [
+                "screw",
+                2
+            ],
+            [
+                "handle",
+                1
+            ]
+        ],
+        "tooltip": "+1 Iron per Second"
+    },
+    "axe": {
+        "ingredients": [
+            [
+                "screw",
+                2
+            ],
+            [
+                "handle",
+                1
+            ],
+            [
+                "strap",
+                1
+            ]
+        ],
+        "tooltip": "+1 Wood per Second"
+    },
+    "knive": {
+        "ingredients": [
+            [
+                "handle",
+                1
+            ],
+            [
+                "strap",
+                3
+            ]
+        ],
+        "tooltip": "+1 Leather per Second"
+    },
+    "toolbox": {
+        "ingredients": [
+            [
+                "hammer",
+                1
+            ],
+            [
+                "axe",
+                1
+            ],
+            [
+                "knive",
+                1
+            ]
+        ],
+        "tooltip": "+1 Resource per Click"
+    },
+    "workbench": {
+        "ingredients": [
+            [
+                "toolbox",
+                100
+            ],
+            [
+                "screw",
+                50
+            ]
+        ],
+        "tooltip": "+1% faster autocrafting; Enables autocrafting"
+    },
+    "anvil": {
+        "ingredients": [
+            [
+                "iron",
+                100
+            ],
+            [
+                "hammer",
+                5
+            ],
+            [
+                "workbench",
+                5
+            ]
+        ],
+        "tooltip": "+1 Screw per Second"
+    },
+    "sawbench": {
+        "ingredients": [
+            [
+                "screw",
+                30
+            ],
+            [
+                "axe",
+                10
+            ],
+            [
+                "workbench",
+                5
+            ]
+        ],
+        "tooltip": "+1 Handle per Second"
+    },
+    "skinning_table": {
+        "ingredients": [
+            [
+                "screw",
+                50
+            ],
+            [
+                "knive",
+                20
+            ],
+            [
+                "workbench",
+                5
+            ]
+        ],
+        "tooltip": "+1 Leather per Second"
+    }
 }

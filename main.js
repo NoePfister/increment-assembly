@@ -56,24 +56,24 @@ var resources = {
 var counts = {
 
     // resource count
-    iron_count: 1,
-    wood_count: 1,
-    leather_count: 1,
+    iron_count: 0,
+    wood_count: 0,
+    leather_count: 0,
 
     //assembly count
-    screw_count: 1,
-    handle_count: 1,
-    strap_count: 1,
+    screw_count: 0,
+    handle_count: 0,
+    strap_count: 0,
 
-    hammer_count: 1,
-    axe_count: 1,
-    knive_count: 1,
-    toolbox_count: 1,
+    hammer_count: 0,
+    axe_count: 0,
+    knive_count: 0,
+    toolbox_count: 0,
 
-    workbench_count: 1,
-    anvil_count: 1,
-    sawbench_count: 1,
-    skinning_table_count: 1
+    workbench_count: 0,
+    anvil_count: 0,
+    sawbench_count: 0,
+    skinning_table_count: 0
 
 }
 
@@ -82,29 +82,29 @@ var counts = {
 update_text();
 // ----
 buttons["iron_button"].onclick = function () {
-    counts["iron_count"] += 1;
+    counts["iron_count"] += (counts["screw_count"]+1);
     update_text();
 };
 
 buttons["wood_button"].onclick = function () {
-    counts["wood_count"] += 1;
+    counts["wood_count"] += (counts["handle_count"] + 1);
     update_text();
 };
 
 buttons["leather_button"].onclick = function () {
-    counts["leather_count"] += 1;
+    counts["leather_count"] += (counts["strap_count"] + 1);
     update_text();
 };
 // ----
 
 for (let item in data) {
-    let button = buttons[item+"_button"];
+    let button = buttons[item + "_button"];
     if (button) {
         button.onclick = function () {
 
             var buyable = true;
 
-            for (let educt of data[item]) {
+            for (let educt of data[item]["ingredients"]) {
                 console.log(`${educt[0]} required: ${educt[1]}, items available: ${counts[educt[0] + "_count"]}`);
                 if (counts[educt[0] + "_count"] < educt[1]) {
                     buyable = false;
@@ -112,7 +112,7 @@ for (let item in data) {
             }
 
             if (buyable) {
-                for (let educt of data[item]) {
+                for (let educt of data[item]["ingredients"]) {
                     console.log(`Will take away ${educt[1]} times ${educt[0]}`);
                     counts[educt[0] + "_count"] -= educt[1];
 
@@ -123,6 +123,9 @@ for (let item in data) {
 
             update_text();
         };
+
+
+        button.setAttribute("data_title",data[item]["tooltip"])
     }
 }
 
@@ -140,4 +143,8 @@ function update_text() {
         let text = resources[item + "_resource"];
         text.innerHTML = counts[item + "_count"];
     }
+}
+
+function update_numbers() {
+    
 }
