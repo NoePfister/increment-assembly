@@ -1,5 +1,7 @@
 import data from './data.json' with { type: 'json' };
 
+var reset_save_button = document.getElementById("reset-save")
+
 var buttons = {
 
     // resource button
@@ -95,21 +97,21 @@ var persecond = {
 var counts = {
 
     // resource count
-    iron_count: 120,
-    wood_count: 120,
-    leather_count: 120,
+    iron_count: 0,
+    wood_count: 0,
+    leather_count: 0,
 
     //assembly count
-    screw_count: 120,
-    handle_count: 120,
-    strap_count: 120,
+    screw_count: 0,
+    handle_count: 0,
+    strap_count: 0,
 
-    hammer_count: 120,
-    axe_count: 120,
-    knive_count: 120,
-    toolbox_count: 120000,
+    hammer_count: 0,
+    axe_count: 0,
+    knive_count: 0,
+    toolbox_count: 0,
 
-    workbench_count: 5,
+    workbench_count: 0,
     anvil_count: 0,
     sawbench_count: 0,
     skinning_table_count: 0
@@ -117,7 +119,7 @@ var counts = {
 }
 
 
-
+load()
 update_text();
 // ----
 buttons["iron_button"].onclick = function () {
@@ -222,6 +224,10 @@ var intervalId = window.setInterval(function () {
     update_text();
 }, 1000);
 
+var intervalsave = window.setInterval(function () {
+    save()
+}, 10000);
+
 function capitalize(s) {
     return String(s[0]).toUpperCase() + String(s).slice(1);
 }
@@ -233,5 +239,23 @@ document.addEventListener("keydown", function (event) {
 });
 
 function round(number) {
-    return number.toFixed(2);
+    return Math.round((number * 100) / 100);
+}
+
+function save() {
+    for (let count in counts) {
+        localStorage.setItem(count, counts[count])
+    }
+}
+
+function load() {
+    for (let count in counts) {
+        counts[count] = Number(localStorage.getItem(count))
+    }
+}
+
+reset_save_button.onclick = function () {
+    localStorage.clear();
+    load()
+    update_text()
 }
