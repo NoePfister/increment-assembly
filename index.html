@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
+    <script src="main.js"></script>
 
 </head>
 
@@ -25,12 +26,23 @@
 
         <div class="menu">
             <h2>Gather Resources</h2>
-            <button class="resource-button">Iron</button><span>(+0/s)</span><span class="resource-available">Available:
-                <b>1K</b></span><br />
-            <button class="resource-button">Wood</button><span>(+0/s)</span><span
-                class="resource-available"><b>1K</b></span><br />
-            <button class="resource-button">Leather</button><span>(+0/s)</span><span
-                class="resource-available"><b>1K</b></span><br />
+
+
+            <button id="button-iron" class="resource-button">Iron</button>
+            <span>(+0/s)</span>
+            <span class="resource-available">Available: <b id="resource-iron">1K</b></span><br />
+
+
+            <button id="button-wood" class="resource-button">Wood</button>
+            <span>(+0/s)</span>
+            <span class="resource-available">Available: <b id="resource-wood">1K</b></span><br />
+
+
+            <button id="button-leather" class="resource-button">Leather</button>
+            <span>(+0/s)</span>
+            <span class="resource-available">Available: <b id="resource-leather">1K</b></span><br />
+
+
         </div>
 
 
