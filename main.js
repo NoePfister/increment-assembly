@@ -95,21 +95,21 @@ var persecond = {
 var counts = {
 
     // resource count
-    iron_count: 0,
-    wood_count: 0,
-    leather_count: 0,
+    iron_count: 120,
+    wood_count: 120,
+    leather_count: 120,
 
     //assembly count
-    screw_count: 0,
-    handle_count: 0,
-    strap_count: 0,
+    screw_count: 120,
+    handle_count: 120,
+    strap_count: 120,
 
-    hammer_count: 0,
-    axe_count: 0,
-    knive_count: 0,
-    toolbox_count: 0,
+    hammer_count: 120,
+    axe_count: 120,
+    knive_count: 120,
+    toolbox_count: 120000,
 
-    workbench_count: 0,
+    workbench_count: 5,
     anvil_count: 0,
     sawbench_count: 0,
     skinning_table_count: 0
@@ -121,17 +121,17 @@ var counts = {
 update_text();
 // ----
 buttons["iron_button"].onclick = function () {
-    counts["iron_count"] += (counts["screw_count"] + 1);
+    counts["iron_count"] += (counts["screw_count"] + 1) * Math.max((1.5 * counts["toolbox_count"]), 1);
     update_text();
 };
 
 buttons["wood_button"].onclick = function () {
-    counts["wood_count"] += (counts["handle_count"] + 1);
+    counts["wood_count"] += (counts["handle_count"] + 1) * Math.max((1.5 * counts["toolbox_count"]), 1);
     update_text();
 };
 
 buttons["leather_button"].onclick = function () {
-    counts["leather_count"] += (counts["strap_count"] + 1);
+    counts["leather_count"] += (counts["strap_count"] + 1) * Math.max((1.5 * counts["toolbox_count"]), 1);
     update_text();
 };
 // ----
@@ -139,8 +139,6 @@ buttons["leather_button"].onclick = function () {
 
 for (let item in data) {
     let requirerment = requirerments[item + "_requirerment"]
-    console.log(item + "_requirerment")
-    console.log(requirerment)
 
     requirerment.innerHTML = "Requires: "
 
@@ -158,7 +156,7 @@ for (let item in data) {
             var buyable = true;
 
             for (let educt of data[item]["ingredients"]) {
-                console.log(`${educt[0]} required: ${educt[1]}, items available: ${counts[educt[0] + "_count"]}`);
+                // console.log(`${educt[0]} required: ${educt[1]}, items available: ${counts[educt[0] + "_count"]}`);
                 if (counts[educt[0] + "_count"] < educt[1]) {
                     buyable = false;
                 }
@@ -166,7 +164,7 @@ for (let item in data) {
 
             if (buyable) {
                 for (let educt of data[item]["ingredients"]) {
-                    console.log(`Will take away ${educt[1]} times ${educt[0]}`);
+                    // console.log(`Will take away ${educt[1]} times ${educt[0]}`);
                     counts[educt[0] + "_count"] -= educt[1];
 
                 }
@@ -189,26 +187,34 @@ for (let item in data) {
 
 function update_text() {
     // update gathering count
-    resources["iron_resource"].innerHTML = counts["iron_count"];
-    resources["wood_resource"].innerHTML = counts["wood_count"];
-    resources["leather_resource"].innerHTML = counts["leather_count"];
+    resources["iron_resource"].innerHTML = round(counts["iron_count"]);
+    resources["wood_resource"].innerHTML = round(counts["wood_count"]);
+    resources["leather_resource"].innerHTML = round(counts["leather_count"]);
 
     // update resources count
     for (let item in data) {
         let text = resources[item + "_resource"];
-        text.innerHTML = counts[item + "_count"];
+        text.innerHTML = round(counts[item + "_count"]);
     }
 
     // update persecond count
-    persecond["iron_persecond"].innerHTML = `(+${counts["hammer_count"]}/s)`
-    persecond["wood_persecond"].innerHTML = `(+${counts["axe_count"]}/s)`
-    persecond["leather_persecond"].innerHTML = `(+${counts["knive_count"]}/s)`
+    persecond["iron_persecond"].innerHTML = `(+${round(counts["hammer_count"])}/s)`
+    persecond["wood_persecond"].innerHTML = `(+${round(counts["axe_count"])}/s)`
+    persecond["leather_persecond"].innerHTML = `(+${round(counts["knive_count"])}/s)`
+
+    persecond["screw_persecond"].innerHTML = `(+${round(counts["anvil_count"] + counts["anvil_count"] * (counts["workbench_count"] * 0.01))}/s)`
+    persecond["handle_persecond"].innerHTML = `(+${round(counts["sawbench_count"] + counts["sawbench_count"] * (counts["workbench_count"] * 0.01))}/s)`
+    persecond["strap_persecond"].innerHTML = `(+${round(counts["skinning_table_count"] + counts["skinning_table_count"] * (counts["workbench_count"] * 0.01))}/s)`
 }
 
 function update_numbers() {
-    counts["iron_count"] += (counts["hammer_count"] * Math.max((1.5 * counts["toolbox_count"]), 1));
-    counts["wood_count"] += (counts["axe_count"] * Math.max((1.5 * counts["toolbox_count"]), 1));
-    counts["leather_count"] += (counts["knive_count"] * Math.max((1.5 * counts["toolbox_count"]), 1));
+    counts["iron_count"] += counts["hammer_count"];
+    counts["wood_count"] += counts["axe_count"];
+    counts["leather_count"] += counts["knive_count"];
+
+    counts["screw_count"] += counts["anvil_count"] + counts["anvil_count"] * (counts["workbench_count"] * 0.01);
+    counts["handle_count"] += counts["sawbench_count"] + counts["sawbench_count"] * (counts["workbench_count"] * 0.01);
+    counts["strap_count"] += counts["skinning_table_count"] + counts["skinning_table_count"] * (counts["workbench_count"] * 0.01);
 }
 
 var intervalId = window.setInterval(function () {
@@ -225,3 +231,7 @@ document.addEventListener("keydown", function (event) {
         event.preventDefault(); // Stops Enter from triggering form submissions or button clicks
     }
 });
+
+function round(number) {
+    return number.toFixed(2);
+}
