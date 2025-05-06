@@ -226,7 +226,7 @@ var intervalId = window.setInterval(function () {
 
 var intervalsave = window.setInterval(function () {
     save()
-}, 10000);
+}, 1000);
 
 function capitalize(s) {
     return String(s[0]).toUpperCase() + String(s).slice(1);
