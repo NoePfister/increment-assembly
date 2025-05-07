@@ -2,6 +2,10 @@ import data from './data.json' with { type: 'json' };
 
 var reset_save_button = document.getElementById("reset-save")
 
+var multibuy_1_button = document.getElementById("multibuy_1");
+var multibuy_10_button = document.getElementById("multibuy_10");
+var multibuy_100_button = document.getElementById("multibuy_100");
+
 var buttons = {
 
     // resource button
@@ -118,9 +122,12 @@ var counts = {
 
 }
 
+var buy_multiplier = 1;
 
-load()
+load();
 update_text();
+update_ingredients();
+multibuy(1);
 // ----
 buttons["iron_button"].onclick = function () {
     counts["iron_count"] += (counts["screw_count"] + 1) * Math.max((1.5 * counts["toolbox_count"]), 1);
@@ -136,19 +143,40 @@ buttons["leather_button"].onclick = function () {
     counts["leather_count"] += (counts["strap_count"] + 1) * Math.max((1.5 * counts["toolbox_count"]), 1);
     update_text();
 };
+
+
+
+multibuy_1_button.onclick = function () {
+    multibuy(1);
+};
+
+multibuy_10_button.onclick = function () {
+    multibuy(10);
+};
+
+multibuy_100_button.onclick = function () {
+    multibuy(100);
+};
+
+
+
 // ----
 
+function update_ingredients() {
+    for (let item in data) {
+        let requirerment = requirerments[item + "_requirerment"]
 
-for (let item in data) {
-    let requirerment = requirerments[item + "_requirerment"]
+        requirerment.innerHTML = "Requires: "
 
-    requirerment.innerHTML = "Requires: "
-
-    for (let ingredient of data[item]["ingredients"]) {
-        requirerment.innerHTML += `${ingredient[1]} ${capitalize(ingredient[0])}; `
+        for (let ingredient of data[item]["ingredients"]) {
+            let price = get_price(ingredient[1], counts[item + "_count"], data[item]["coefficient"]);
+            requirerment.innerHTML += `${price} ${capitalize(ingredient[0])}; `
+        }
+        requirerment.innerHTML = requirerment.innerHTML.slice(0, -2);
     }
-    requirerment.innerHTML = requirerment.innerHTML.slice(0, -2);
+
 }
+
 
 for (let item in data) {
     let button = buttons[item + "_button"];
@@ -159,7 +187,9 @@ for (let item in data) {
 
             for (let educt of data[item]["ingredients"]) {
                 // console.log(`${educt[0]} required: ${educt[1]}, items available: ${counts[educt[0] + "_count"]}`);
-                if (counts[educt[0] + "_count"] < educt[1]) {
+
+                let price = get_price(educt[1], counts[item + "_count"], data[item]["coefficient"]) * buy_multiplier;
+                if (counts[educt[0] + "_count"] < price) {
                     buyable = false;
                 }
             }
@@ -167,14 +197,17 @@ for (let item in data) {
             if (buyable) {
                 for (let educt of data[item]["ingredients"]) {
                     // console.log(`Will take away ${educt[1]} times ${educt[0]}`);
-                    counts[educt[0] + "_count"] -= educt[1];
+                    let price = get_price(educt[1], counts[item + "_count"], data[item]["coefficient"]) * buy_multiplier;
+
+                    counts[educt[0] + "_count"] -= price;
 
                 }
-                counts[item + "_count"] += 1;
+                counts[item + "_count"] += buy_multiplier;
             }
 
 
             update_text();
+            update_ingredients();
         };
 
 
@@ -256,6 +289,35 @@ function load() {
 
 reset_save_button.onclick = function () {
     localStorage.clear();
-    load()
-    update_text()
+    load();
+    update_text();
+    update_ingredients();
+}
+
+function multibuy(number) {
+    var green = "#2fe684"
+    var gray = "#e9e8f0"
+
+    if (number == 1) {
+        multibuy_1_button.style.backgroundColor = green;
+        multibuy_10_button.style.backgroundColor = gray;
+        multibuy_100_button.style.backgroundColor = gray;
+        buy_multiplier = 1;
+
+    } else if (number == 10) {
+        multibuy_1_button.style.backgroundColor = gray;
+        multibuy_10_button.style.backgroundColor = green;
+        multibuy_100_button.style.backgroundColor = gray;
+        buy_multiplier = 10;
+
+    } else {
+        multibuy_1_button.style.backgroundColor = gray;
+        multibuy_10_button.style.backgroundColor = gray;
+        multibuy_100_button.style.backgroundColor = green;
+        buy_multiplier = 100;
+    }
+}
+
+function get_price(base_cost, level, coefficientlevel) {
+    return base_cost * (coefficientlevel ** level)
 }

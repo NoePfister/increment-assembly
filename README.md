@@ -6,7 +6,7 @@ The Game autosaves every Second, you can leave the page at any moment and the pr
 
 # TODO
 
-- [ ] Add bulk buy option
 - [ ] Balance requirements
+- [ ] Add bulk buy option
 - [ ] Add rebirth system
 - [ ] Add Slow unlocking of Buttons
