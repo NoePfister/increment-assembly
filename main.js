@@ -169,7 +169,7 @@ function update_ingredients() {
         requirerment.innerHTML = "Requires: "
 
         for (let ingredient of data[item]["ingredients"]) {
-            let price = get_price(ingredient[1], counts[item + "_count"], data[item]["coefficient"]);
+            let price = round(get_price(ingredient[1], counts[item + "_count"], data[item]["coefficient"]));
             requirerment.innerHTML += `${price} ${capitalize(ingredient[0])}; `
         }
         requirerment.innerHTML = requirerment.innerHTML.slice(0, -2);
