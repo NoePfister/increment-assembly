@@ -10,7 +10,8 @@
                 5
             ]
         ],
-        "tooltip": "Gives you +1 Iron per click"
+        "tooltip": "Gives you +1 Iron per click",
+        "coefficient": 1.5
     },
     "handle": {
         "ingredients": [
@@ -23,16 +24,21 @@
                 1
             ]
         ],
-        "tooltip": "Gives you +1 Wood per click"
+        "tooltip": "Gives you +1 Wood per click",
+        "coefficient": 1.5
     },
     "strap": {
         "ingredients": [
             [
                 "leather",
                 20
+            ],[
+                "iron",
+                5
             ]
         ],
-        "tooltip": "Gives you +1 Leather per click"
+        "tooltip": "Gives you +1 Leather per click",
+        "coefficient": 1.5
     },
     "hammer": {
         "ingredients": [
@@ -45,7 +51,8 @@
                 1
             ]
         ],
-        "tooltip": "+1 Iron per Second"
+        "tooltip": "+1 Iron per Second",
+        "coefficient": 1.5
     },
     "axe": {
         "ingredients": [
@@ -62,7 +69,8 @@
                 1
             ]
         ],
-        "tooltip": "+1 Wood per Second"
+        "tooltip": "+1 Wood per Second",
+        "coefficient": 1.5
     },
     "knive": {
         "ingredients": [
@@ -75,7 +83,8 @@
                 3
             ]
         ],
-        "tooltip": "+1 Leather per Second"
+        "tooltip": "+1 Leather per Second",
+        "coefficient": 1.5
     },
     "workbench": {
         "ingredients": [
@@ -88,7 +97,8 @@
                 50
             ]
         ],
-        "tooltip": "+1% faster autocrafting; Enables autocrafting"
+        "tooltip": "+1% faster autocrafting; Enables autocrafting",
+        "coefficient": 2.5
     },
     "anvil": {
         "ingredients": [
@@ -101,7 +111,8 @@
                 5
             ]
         ],
-        "tooltip": "+1 Screw per Second"
+        "tooltip": "+1 Screw per Second",
+        "coefficient": 1.5
     },
     "sawbench": {
         "ingredients": [
@@ -114,7 +125,8 @@
                 10
             ]
         ],
-        "tooltip": "+1 Handle per Second"
+        "tooltip": "+1 Handle per Second",
+        "coefficient": 1.5
     },
     "skinning_table": {
         "ingredients": [
@@ -127,7 +139,8 @@
                 20
             ]
         ],
-        "tooltip": "+1 Leather per Second"
+        "tooltip": "+1 Leather per Second",
+        "coefficient": 1.5
     },
     "toolbox": {
         "ingredients": [
@@ -144,6 +157,7 @@
                 1
             ]
         ],
-        "tooltip": "*1.5 Resource per Click"
+        "tooltip": "*1.5 Resource per Click",
+        "coefficient": 2.5
     }
 }
