@@ -77,28 +77,11 @@
         ],
         "tooltip": "+1 Leather per Second"
     },
-    "toolbox": {
-        "ingredients": [
-            [
-                "hammer",
-                1
-            ],
-            [
-                "axe",
-                1
-            ],
-            [
-                "knive",
-                1
-            ]
-        ],
-        "tooltip": "*1.5 Resource per Click"
-    },
     "workbench": {
         "ingredients": [
             [
                 "toolbox",
-                100
+                10
             ],
             [
                 "screw",
@@ -116,10 +99,6 @@
             [
                 "hammer",
                 5
-            ],
-            [
-                "workbench",
-                5
             ]
         ],
         "tooltip": "+1 Screw per Second"
@@ -133,10 +112,6 @@
             [
                 "axe",
                 10
-            ],
-            [
-                "workbench",
-                5
             ]
         ],
         "tooltip": "+1 Handle per Second"
@@ -150,12 +125,25 @@
             [
                 "knive",
                 20
-            ],
-            [
-                "workbench",
-                5
             ]
         ],
         "tooltip": "+1 Leather per Second"
+    },
+    "toolbox": {
+        "ingredients": [
+            [
+                "hammer",
+                1
+            ],
+            [
+                "axe",
+                1
+            ],
+            [
+                "knive",
+                1
+            ]
+        ],
+        "tooltip": "*1.5 Resource per Click"
     }
 }
