@@ -1,102 +1,82 @@
 import data from './data.json' with { type: 'json' };
 
-var reset_save_button = document.getElementById("reset-save")
-
-var multibuy_1_button = document.getElementById("multibuy_1");
-var multibuy_10_button = document.getElementById("multibuy_10");
-var multibuy_100_button = document.getElementById("multibuy_100");
-
 var buttons = {
-
-    // resource button
-    iron_button: document.getElementById("button-iron"),
-    wood_button: document.getElementById("button-wood"),
-    leather_button: document.getElementById("button-leather"),
-
-
-
-    //assembly button
-    screw_button: document.getElementById("button-screw"),
-    handle_button: document.getElementById("button-handle"),
-    strap_button: document.getElementById("button-strap"),
-
-    hammer_button: document.getElementById("button-hammer"),
-    axe_button: document.getElementById("button-axe"),
-    knive_button: document.getElementById("button-knive"),
-    toolbox_button: document.getElementById("button-toolbox"),
-
-    workbench_button: document.getElementById("button-workbench"),
-    anvil_button: document.getElementById("button-anvil"),
-    sawbench_button: document.getElementById("button-sawbench"),
-    skinning_table_button: document.getElementById("button-skinning_table")
+    button_iron: button_iron,
+    button_wood: button_wood,
+    button_leather: button_leather,
+    button_screw: button_screw,
+    button_handle: button_handle,
+    button_strap: button_strap,
+    button_hammer: button_hammer,
+    button_axe: button_axe,
+    button_knive: button_knive,
+    button_toolbox: button_toolbox,
+    button_workbench: button_workbench,
+    button_anvil: button_anvil,
+    button_sawbench: button_sawbench,
+    button_skinning_table: button_skinning_table
 }
+
 
 
 var resources = {
-    //resource text
-    iron_resource: document.getElementById("resource-iron"),
-    wood_resource: document.getElementById("resource-wood"),
-    leather_resource: document.getElementById("resource-leather"),
-
-    // assembly text
-    screw_resource: document.getElementById("resource-screw"),
-    handle_resource: document.getElementById("resource-handle"),
-    strap_resource: document.getElementById("resource-strap"),
-
-    hammer_resource: document.getElementById("resource-hammer"),
-    axe_resource: document.getElementById("resource-axe"),
-    knive_resource: document.getElementById("resource-knive"),
-    toolbox_resource: document.getElementById("resource-toolbox"),
-
-    workbench_resource: document.getElementById("resource-workbench"),
-    anvil_resource: document.getElementById("resource-anvil"),
-    sawbench_resource: document.getElementById("resource-sawbench"),
-    skinning_table_resource: document.getElementById("resource-skinning_table")
+    resource_iron: resource_iron,
+    resource_wood: resource_wood,
+    resource_leather: resource_leather,
+    resource_screw: resource_screw,
+    resource_handle: resource_handle,
+    resource_strap: resource_strap,
+    resource_hammer: resource_hammer,
+    resource_axe: resource_axe,
+    resource_knive: resource_knive,
+    resource_toolbox: resource_toolbox,
+    resource_workbench: resource_workbench,
+    resource_anvil: resource_anvil,
+    resource_sawbench: resource_sawbench,
+    resource_skinning_table: resource_skinning_table,
 }
 
-var requirerments = {
+var requirements = {
 
-    screw_requirerment: document.getElementById("screw-requirerments"),
-    handle_requirerment: document.getElementById("handle-requirerments"),
-    strap_requirerment: document.getElementById("strap-requirerments"),
-
-    hammer_requirerment: document.getElementById("hammer-requirerments"),
-    axe_requirerment: document.getElementById("axe-requirerments"),
-    knive_requirerment: document.getElementById("knive-requirerments"),
-    toolbox_requirerment: document.getElementById("toolbox-requirerments"),
-
-    workbench_requirerment: document.getElementById("workbench-requirerments"),
-    anvil_requirerment: document.getElementById("anvil-requirerments"),
-    sawbench_requirerment: document.getElementById("sawbench-requirerments"),
-    skinning_table_requirerment: document.getElementById("skinning_table-requirerments")
+    screw_requirements: screw_requirements,
+    handle_requirements: handle_requirements,
+    strap_requirements: strap_requirements,
+    hammer_requirements: hammer_requirements,
+    axe_requirements: axe_requirements,
+    knive_requirements: knive_requirements,
+    toolbox_requirements: toolbox_requirements,
+    workbench_requirements: workbench_requirements,
+    anvil_requirements: anvil_requirements,
+    sawbench_requirements: sawbench_requirements,
+    skinning_table_requirements: skinning_table_requirements,
 }
 
 var persecond = {
     //resource text
-    iron_persecond: document.getElementById("persecond-iron"),
-    wood_persecond: document.getElementById("persecond-wood"),
-    leather_persecond: document.getElementById("persecond-leather"),
+    iron_persecond: persecond_iron,
+    wood_persecond: persecond_wood,
+    leather_persecond: persecond_leather,
 
     // assembly text
-    screw_persecond: document.getElementById("persecond-screw"),
-    handle_persecond: document.getElementById("persecond-handle"),
-    strap_persecond: document.getElementById("persecond-strap"),
+    screw_persecond: persecond_screw,
+    handle_persecond: persecond_handle,
+    strap_persecond: persecond_strap,
 
-    hammer_persecond: document.getElementById("persecond-hammer"),
-    axe_persecond: document.getElementById("persecond-axe"),
-    knive_persecond: document.getElementById("persecond-knive"),
-    toolbox_persecond: document.getElementById("persecond-toolbox"),
+    hammer_persecond: persecond_hammer,
+    axe_persecond: persecond_axe,
+    knive_persecond: persecond_knive,
+    toolbox_persecond: persecond_toolbox,
 
-    workbench_persecond: document.getElementById("persecond-workbench"),
-    anvil_persecond: document.getElementById("persecond-anvil"),
-    sawbench_persecond: document.getElementById("persecond-sawbench"),
-    skinning_table_persecond: document.getElementById("persecond-skinning_table")
+    workbench_persecond: persecond_workbench,
+    anvil_persecond: persecond_anvil,
+    sawbench_persecond: persecond_sawbench,
+    skinning_table_persecond: persecond_skinning_table
 }
 
 
 
 
-// ------------
+// ____________
 
 var counts = {
 
@@ -128,18 +108,18 @@ load();
 update_text();
 update_ingredients();
 multibuy(1);
-// ----
-buttons["iron_button"].onclick = function () {
+// ____
+buttons["button_iron"].onclick = function () {
     counts["iron_count"] += (counts["screw_count"] + 1) * Math.max((1.5 * counts["toolbox_count"]), 1);
     update_text();
 };
 
-buttons["wood_button"].onclick = function () {
+buttons["button_wood"].onclick = function () {
     counts["wood_count"] += (counts["handle_count"] + 1) * Math.max((1.5 * counts["toolbox_count"]), 1);
     update_text();
 };
 
-buttons["leather_button"].onclick = function () {
+buttons["button_leather"].onclick = function () {
     counts["leather_count"] += (counts["strap_count"] + 1) * Math.max((1.5 * counts["toolbox_count"]), 1);
     update_text();
 };
@@ -160,11 +140,11 @@ multibuy_100_button.onclick = function () {
 
 
 
-// ----
+// ____
 
 function update_ingredients() {
     for (let item in data) {
-        let requirerment = requirerments[item + "_requirerment"]
+        let requirerment = requirements[item + "_requirements"]
 
         requirerment.innerHTML = "Requires: "
 
@@ -179,7 +159,7 @@ function update_ingredients() {
 
 
 for (let item in data) {
-    let button = buttons[item + "_button"];
+    let button = buttons["button_" + item];
     if (button) {
         button.onclick = function () {
 
@@ -217,18 +197,18 @@ for (let item in data) {
 
 
 
-// ----
+// ____
 
 
 function update_text() {
     // update gathering count
-    resources["iron_resource"].innerHTML = round(counts["iron_count"]);
-    resources["wood_resource"].innerHTML = round(counts["wood_count"]);
-    resources["leather_resource"].innerHTML = round(counts["leather_count"]);
+    resources["resource_iron"].innerHTML = round(counts["iron_count"]);
+    resources["resource_wood"].innerHTML = round(counts["wood_count"]);
+    resources["resource_leather"].innerHTML = round(counts["leather_count"]);
 
     // update resources count
     for (let item in data) {
-        let text = resources[item + "_resource"];
+        let text = resources["resource_" + item];
         text.innerHTML = round(counts[item + "_count"]);
     }
 
