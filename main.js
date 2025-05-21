@@ -17,8 +17,6 @@ var buttons = {
     button_skinning_table: button_skinning_table
 }
 
-
-
 var resources = {
     resource_iron: resource_iron,
     resource_wood: resource_wood,
@@ -72,11 +70,6 @@ var persecond = {
     sawbench_persecond: persecond_sawbench,
     skinning_table_persecond: persecond_skinning_table
 }
-
-
-
-
-// ____________
 
 var counts = {
 
