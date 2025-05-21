@@ -1,74 +1,70 @@
 import data from './data.json' with { type: 'json' };
 
 var buttons = {
-    button_iron: button_iron,
-    button_wood: button_wood,
-    button_leather: button_leather,
-    button_screw: button_screw,
-    button_handle: button_handle,
-    button_strap: button_strap,
-    button_hammer: button_hammer,
-    button_axe: button_axe,
-    button_knive: button_knive,
-    button_toolbox: button_toolbox,
-    button_workbench: button_workbench,
-    button_anvil: button_anvil,
-    button_sawbench: button_sawbench,
-    button_skinning_table: button_skinning_table
+    button_iron: document.getElementById("button_iron"),
+    button_wood: document.getElementById("button_wood"),
+    button_leather: document.getElementById("button_leather"),
+    button_screw: document.getElementById("button_screw"),
+    button_handle: document.getElementById("button_handle"),
+    button_strap: document.getElementById("button_strap"),
+    button_hammer: document.getElementById("button_hammer"),
+    button_axe: document.getElementById("button_axe"),
+    button_knive: document.getElementById("button_knive"),
+    button_toolbox: document.getElementById("button_toolbox"),
+    button_workbench: document.getElementById("button_workbench"),
+    button_anvil: document.getElementById("button_anvil"),
+    button_sawbench: document.getElementById("button_sawbench"),
+    button_skinning_table: document.getElementById("button_skinning_table")
 }
 
 var resources = {
-    resource_iron: resource_iron,
-    resource_wood: resource_wood,
-    resource_leather: resource_leather,
-    resource_screw: resource_screw,
-    resource_handle: resource_handle,
-    resource_strap: resource_strap,
-    resource_hammer: resource_hammer,
-    resource_axe: resource_axe,
-    resource_knive: resource_knive,
-    resource_toolbox: resource_toolbox,
-    resource_workbench: resource_workbench,
-    resource_anvil: resource_anvil,
-    resource_sawbench: resource_sawbench,
-    resource_skinning_table: resource_skinning_table,
+    resource_iron: document.getElementById("resource_iron"),
+    resource_wood: document.getElementById("resource_wood"),
+    resource_leather: document.getElementById("resource_leather"),
+    resource_screw: document.getElementById("resource_screw"),
+    resource_handle: document.getElementById("resource_handle"),
+    resource_strap: document.getElementById("resource_strap"),
+    resource_hammer: document.getElementById("resource_hammer"),
+    resource_axe: document.getElementById("resource_axe"),
+    resource_knive: document.getElementById("resource_knive"),
+    resource_toolbox: document.getElementById("resource_toolbox"),
+    resource_workbench: document.getElementById("resource_workbench"),
+    resource_anvil: document.getElementById("resource_anvil"),
+    resource_sawbench: document.getElementById("resource_sawbench"),
+    resource_skinning_table: document.getElementById("resource_skinning_table"),
 }
 
 var requirements = {
 
-    screw_requirements: screw_requirements,
-    handle_requirements: handle_requirements,
-    strap_requirements: strap_requirements,
-    hammer_requirements: hammer_requirements,
-    axe_requirements: axe_requirements,
-    knive_requirements: knive_requirements,
-    toolbox_requirements: toolbox_requirements,
-    workbench_requirements: workbench_requirements,
-    anvil_requirements: anvil_requirements,
-    sawbench_requirements: sawbench_requirements,
-    skinning_table_requirements: skinning_table_requirements,
+    screw_requirements: document.getElementById("screw_requirements"),
+    handle_requirements: document.getElementById("handle_requirements"),
+    strap_requirements: document.getElementById("strap_requirements"),
+    hammer_requirements: document.getElementById("hammer_requirements"),
+    axe_requirements: document.getElementById("axe_requirements"),
+    knive_requirements: document.getElementById("knive_requirements"),
+    toolbox_requirements: document.getElementById("toolbox_requirements"),
+    workbench_requirements: document.getElementById("workbench_requirements"),
+    anvil_requirements: document.getElementById("anvil_requirements"),
+    sawbench_requirements: document.getElementById("sawbench_requirements"),
+    skinning_table_requirements: document.getElementById("skinning_table_requirements"),
 }
 
 var persecond = {
     //resource text
-    iron_persecond: persecond_iron,
-    wood_persecond: persecond_wood,
-    leather_persecond: persecond_leather,
-
-    // assembly text
-    screw_persecond: persecond_screw,
-    handle_persecond: persecond_handle,
-    strap_persecond: persecond_strap,
-
-    hammer_persecond: persecond_hammer,
-    axe_persecond: persecond_axe,
-    knive_persecond: persecond_knive,
-    toolbox_persecond: persecond_toolbox,
-
-    workbench_persecond: persecond_workbench,
-    anvil_persecond: persecond_anvil,
-    sawbench_persecond: persecond_sawbench,
-    skinning_table_persecond: persecond_skinning_table
+    iron_persecond: document.getElementById("persecond_iron"),
+    wood_persecond: document.getElementById("persecond_wood"),
+    leather_persecond: document.getElementById("persecond_leather"),
+    screw_persecond: document.getElementById("persecond_screw"),
+    handle_persecond: document.getElementById("persecond_handle"),
+    strap_persecond: document.getElementById("persecond_strap"),
+    hammer_persecond: document.getElementById("persecond_hammer"),
+    axe_persecond: document.getElementById("persecond_axe"),
+    knive_persecond: document.getElementById("persecond_knive"),
+    toolbox_persecond: document.getElementById("persecond_toolbox"),
+    workbench_persecond: document.getElementById("persecond_workbench"),
+    anvil_persecond: document.getElementById("persecond_anvil"),
+    sawbench_persecond: document.getElementById("persecond_sawbench"),
+    skinning_table_persecond: document.getElementById("persecond_skinning_table"),
 }
 
 var counts = {

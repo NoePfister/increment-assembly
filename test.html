@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Site</title>
+
+</head>
+
+<body>
+    <template id="idle-button-template">
+        <button id="button_template" class="assembly_button">Template</button>
+        <span id="persecond_template">(+0/s)</span>
+        <span class="assembly_available">Available: <b id="resource_template">1K</b></span>
+        <span class="assembly_requirements">(<i id="template_requirements">Requires: 10 Iron; 5
+                Wood</i>)</span><br />
+    
+    </template>
+
+    <script type="module" src="./components.js"></script>
+
+
+
+    <p>Custom component:</p><br />
+
+    <idle-button name="leather"></idle-button>
+
+
+
+
+
+</body>
+
+</html>

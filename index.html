@@ -10,11 +10,23 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
                 rel="stylesheet">
+        <script type="module" src="./components.js"></script>
+
+
 
 
 </head>
 
 <body>
+
+        <template id="idle-button-template">
+                <button id="button_template" class="assembly_button">Template</button>
+                <span id="persecond_template">(+0/s)</span>
+                <span class="assembly_available">Available: <b id="resource_template">1K</b></span>
+                <span class="assembly_requirements">(<i id="template_requirements">Requires: 10 Iron; 5
+                                Wood</i>)</span><br />
+
+        </template>
 
         <div class="container">
 
@@ -59,25 +71,14 @@
                         <!-- More Resources per Click -->
 
                         <!-- SCREW BUTTON (More Iron per click)-->
-                        <button id="button_screw" class="assembly_button">Screw</button>
-                        <span id="persecond_screw">(+0/s)</span>
-                        <span class="assembly_available">Available: <b id="resource_screw">1K</b></span>
-                        <span class="assembly_requirements">(<i id="screw_requirements">Requires: 10 Iron; 5
-                                        Wood</i>)</span><br />
+                        <idle-button name="screw"></idle-button>
 
                         <!-- HANDLE BUTTON (More Wood per click) -->
-                        <button id="button_handle" class="assembly_button">Handle</button>
-                        <span id="persecond_handle">(+0/s)</span>
-                        <span class="assembly_available">Available: <b id="resource_handle">1K</b></span>
-                        <span class="assembly_requirements">(<i id="handle_requirements">Requires: 5 Wood; 1
-                                        Leather</i>)</span><br />
+                        <idle-button name="handle"></idle-button>
 
                         <!-- STRAP BUTTON (More Leather per click) -->
-                        <button id="button_strap" class="assembly_button">Strap</button>
-                        <span id="persecond_strap">(+0/s)</span>
-                        <span class="assembly_available">Available: <b id="resource_strap">1K</b></span>
-                        <span class="assembly_requirements">(<i id="strap_requirements">Requires: 20
-                                        Leather</i>)</span><br />
+                        <idle-button name="strap"></idle-button>
+
 
                         <hr />
 
@@ -86,32 +87,16 @@
                         <!-- Basic Resources Automation -->
 
                         <!-- HAMMER BUTTON (+1 Iron/Second)-->
-                        <button id="button_hammer" class="assembly_button">Hammer</button>
-                        <span id="persecond_hammer">(+0/s)</span>
-                        <span class="assembly_available">Available: <b id="resource_hammer">1K</b></span>
-                        <span class="assembly_requirements">(<i id="hammer_requirements">Requires: 2 Screw; 1
-                                        Handle</i>)</span><br />
+                        <idle-button name="hammer"></idle-button>
 
                         <!-- AXE BUTTON (+1 Wood/Second) -->
-                        <button id="button_axe" class="assembly_button">Axe</button>
-                        <span id="persecond_axe">(+0/s)</span>
-                        <span class="assembly_available">Available: <b id="resource_axe">1K</b></span>
-                        <span class="assembly_requirements">(<i id="axe_requirements">Requires: 2 Screw; 1 Handle; 1
-                                        Strap</i>)</span><br />
+                        <idle-button name="axe"></idle-button>
 
                         <!-- KNIVE BUTTON (+1 Leather/Second) -->
-                        <button id="button_knive" class="assembly_button">Knive</button>
-                        <span id="persecond_knive">(+0/s)</span>
-                        <span class="assembly_available">Available: <b id="resource_knive">1K</b></span>
-                        <span class="assembly_requirements">(<i id="knive_requirements">Requires: 1 Handle; 3
-                                        Strap</i>)</span><br />
+                        <idle-button name="knive"></idle-button>
 
                         <!-- TOOLBOX BUTTON (More everything per click) -->
-                        <button id="button_toolbox" class="assembly_button">Toolbox</button>
-                        <span id="persecond_toolbox">(+0/s)</span>
-                        <span class="assembly_available">Available: <b id="resource_toolbox">1K</b></span>
-                        <span class="assembly_requirements">(<i id="toolbox_requirements">Requires: 1 Hammer; 1 Axe; 1
-                                        Knive</i>)</span><br />
+                        <idle-button name="toolbox"></idle-button>
 
 
                         <hr />
@@ -122,33 +107,16 @@
 
 
                         <!-- ANVIL BUTTON (+1 Screw/Second) -->
-                        <button id="button_anvil" class="assembly_button">Anvil</button>
-                        <span id="persecond_anvil">(+0/s)</span>
-                        <span class="assembly_available">Available: <b id="resource_anvil">1K</b></span>
-                        <span class="assembly_requirements">(<i id="anvil_requirements">Requires: 100 Iron; 5 Hammer; 5
-                                        Workbench</i>)</span><br />
+                        <idle-button name="anvil"></idle-button>
 
                         <!-- SAWBENCH BUTTON (+1 Handle/Second) -->
-                        <button id="button_sawbench" class="assembly_button">Sawbench</button>
-                        <span id="persecond_sawbench">(+0/s)</span>
-                        <span class="assembly_available">Available: <b id="resource_sawbench">1K</b></span>
-                        <span class="assembly_requirements">(<i id="sawbench_requirements">Requires: 30 Screw; 10 Axe; 5
-                                        Workbench</i>)</span><br />
+                        <idle-button name="sawbench"></idle-button>
 
                         <!-- SKINNING TABLE BUTTON (+1 Strap/Second) -->
-                        <button id="button_skinning_table" class="assembly_button">Skinning Table</button>
-                        <span id="persecond_skinning_table">(+0/s)</span>
-                        <span class="assembly_available">Available: <b id="resource_skinning_table">1K</b></span>
-                        <span class="assembly_requirements">(<i id="skinning_table_requirements">Requires: 50 Screw; 20
-                                        Knive; 5
-                                        Workbench</i>)</span><br />
+                        <idle-button name="skinning_table"></idle-button>
 
                         <!-- WORKBENCH BUTTON (Faster crafting)-->
-                        <button id="button_workbench" class="assembly_button">Workbench</button>
-                        <span id="persecond_workbench">(+0/s)</span>
-                        <span class="assembly_available">Available: <b id="resource_workbench">1K</b></span>
-                        <span class="assembly_requirements">(<i id="workbench_requirements">Requires: 100 Toolbox; 50
-                                        Screw</i>)</span><br />
+                        <idle-button name="workbench"></idle-button>
 
 
                         <!-- TIER 4 -->
